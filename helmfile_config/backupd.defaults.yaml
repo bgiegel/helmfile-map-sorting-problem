@@ -1,0 +1,16 @@
+config:
+  backends:
+    bucket_gva:
+      mode: s3
+      options:
+        region: gva
+        bucket: bucket-gva
+        access_key: access_key_1
+        secret: secret_key_1
+    bucket_zrh:
+      mode: s3
+      options:
+        region: zrh
+        bucket: bucket-zrh
+        access_key: access_key_2
+        secret: secret_key_2

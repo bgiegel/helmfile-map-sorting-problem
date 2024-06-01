@@ -1,0 +1,3 @@
+config:
+  backends:
+    # nothing here no defaults value in the base chart

@@ -1,0 +1,14 @@
+environments:
+  prod:
+    values:
+      - backupd.env.yaml
+
+---
+
+releases:
+  - name: backupd
+    chart: ../chart/backupd
+    namespace: prod-backups
+    values:
+      - backupd.defaults.yaml
+      - backupd.yaml.gotmpl

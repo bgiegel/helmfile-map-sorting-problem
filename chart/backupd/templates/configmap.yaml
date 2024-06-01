@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backupd
+data:
+  backupd.yaml: |-
+    {{ .Values.config | toYaml | nindent 4 }}
