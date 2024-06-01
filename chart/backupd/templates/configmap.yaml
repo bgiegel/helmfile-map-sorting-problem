@@ -4,4 +4,13 @@ metadata:
   name: backupd
 data:
   backupd.yaml: |-
-    {{ .Values.config | toYaml | nindent 4 }}
+    backends:
+      {{ range $backup :=  .Values.backupd.opensearch.backups }}
+      {{ $backup.client_id }}:
+        mode: azure
+        options:
+          container: client-opensearch-backups
+          account_name: clientsbackups
+          account_key1: key1
+          account_key2: key2
+      {{ end }}
